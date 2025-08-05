@@ -19,7 +19,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-TOKEN = "8037958434:AAE7r9NipsFHBKygi4tUgxDXhz2fMabyHCA"
+TOKEN = "8037958434:AAFwf4xwVcux4TBgly7nRBglP8jdNFOLdKo"
 OWNER_IDS = [5951659304, 6871969740]
 
 COUNTRIES = {
