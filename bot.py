@@ -38,9 +38,4 @@ if __name__ == "__main__":
     app.add_handler(CallbackQueryHandler(button))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_messages))
 
-    app.run_webhook(
-        listen="0.0.0.0",
-        port=PORT,
-        url_path=TOKEN,
-        webhook_url=f"https://my-telegram-bot-u11f.onrender.com/{TOKEN}"
-    )
+    app.run_polling()
