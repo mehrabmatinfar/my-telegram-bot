@@ -2316,3 +2316,21 @@ def main():
 
 if __name__ == "__main__":
     main()
+if __name__ == "__main__":
+    import os
+    from telegram.ext import Application, CommandHandler, CallbackQueryHandler, MessageHandler, filters
+
+    PORT = int(os.environ.get("PORT", 8443))
+
+    app = Application.builder().token(TOKEN).build()
+
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(CallbackQueryHandler(button))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_messages))
+
+    app.run_webhook(
+        listen="0.0.0.0",
+        port=PORT,
+        url_path=TOKEN,
+        webhook_url=f"https://my-telegram-bot-u11f.onrender.com/{TOKEN}"
+)
