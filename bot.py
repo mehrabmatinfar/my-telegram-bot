@@ -3,7 +3,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, MessageHandler, ContextTypes, filters
 
 # توکن رباتت
-TOKEN = "توکن_واقعی_ربات"
+TOKEN = 8037958434:AAGxcgYLUL4xLnXfS8MZ-SuG6u5lQlHsg-Q
 
 # تابع /start
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
