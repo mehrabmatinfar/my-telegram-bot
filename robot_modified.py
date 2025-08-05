@@ -2297,3 +2297,22 @@ if __name__ == '__main__':
     app.add_handler(CallbackQueryHandler(button))
 
     app.run_polling()
+def main():
+    PORT = int(os.environ.get("PORT", 10000))
+    
+    application = Application.builder().token(TOKEN).build()
+    application.add_handler(CommandHandler("start", start))
+    application.add_handler(CommandHandler("panel", panel))
+    application.add_handler(CallbackQueryHandler(button))
+    application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, message_handler))
+    application.add_error_handler(error)
+
+    application.run_webhook(
+        listen="0.0.0.0",
+        port=PORT,
+        url_path=TOKEN,
+        webhook_url=f"https://your-render-app-name.onrender.com/{TOKEN}"
+    )
+
+if __name__ == "__main__":
+    main()
